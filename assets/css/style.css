@@ -1,0 +1,38 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#2d6a4f;--light-green:#95d5b2;--cream:#f8f9fa;--dark:#1a1a2e;--text:#333;--gray:#6c757d;--border:#e9ecef}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);line-height:1.7;background:#fff}
+.container{max-width:720px;margin:0 auto;padding:0 24px}
+header{background:var(--cream);padding:40px 0 32px;border-bottom:3px solid var(--light-green)}
+header h1{font-size:1.6rem;color:var(--green);font-weight:700}
+header h1 a{color:var(--green);text-decoration:none}
+header p{color:var(--gray);font-size:.95rem;margin-top:4px}
+nav{margin-top:16px;display:flex;gap:24px;flex-wrap:wrap}
+nav a{color:var(--text);text-decoration:none;font-size:.9rem;font-weight:500}
+nav a:hover{color:var(--green)}
+main{padding:48px 0}
+.post{margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.post:last-child{border-bottom:none}
+.post h2{font-size:1.4rem;margin-bottom:8px;line-height:1.4}
+.post h2 a{color:var(--dark);text-decoration:none}
+.post h2 a:hover{color:var(--green)}
+.post .meta{font-size:.85rem;color:var(--gray);margin-bottom:12px}
+.post p{font-size:.95rem;margin-bottom:12px;color:#444}
+.post .read-more{display:inline-block;color:var(--green);font-weight:600;font-size:.9rem;text-decoration:none}
+.post .read-more:hover{text-decoration:underline}
+.affiliate-note{font-size:.8rem;color:var(--gray);margin-top:24px;padding-top:12px;border-top:1px solid var(--border)}
+.article h1{font-size:1.8rem;line-height:1.3;margin-bottom:8px;color:var(--dark)}
+.article .meta{font-size:.85rem;color:var(--gray);margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.article h2{font-size:1.3rem;margin:32px 0 12px;color:var(--dark)}
+.article h3{font-size:1.1rem;margin:24px 0 8px;color:var(--dark)}
+.article p,.article li{font-size:.95rem;color:#444;margin-bottom:12px}
+.article ul,.article ol{padding-left:24px;margin-bottom:16px}
+.article li{margin-bottom:6px}
+.article table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.9rem}
+.article th,.article td{padding:10px 12px;text-align:left;border:1px solid var(--border)}
+.article th{background:var(--cream);font-weight:600;color:var(--dark)}
+.article .product-review{margin:24px 0;padding:20px;background:var(--cream);border-radius:8px;border-left:4px solid var(--green)}
+.article .product-review h3{margin-top:0}
+.article .product-review .price{font-weight:700;color:var(--green)}
+footer{background:var(--cream);padding:32px 0;margin-top:48px;font-size:.85rem;color:var(--gray);text-align:center}
+footer a{color:var(--green);text-decoration:none}
+@media(max-width:600px){header h1{font-size:1.3rem}.article h1{font-size:1.4rem}.container{padding:0 16px}}
