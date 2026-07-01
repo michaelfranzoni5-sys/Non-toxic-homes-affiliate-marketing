@@ -1,38 +1,72 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--green:#2d6a4f;--light-green:#95d5b2;--cream:#f8f9fa;--dark:#1a1a2e;--text:#333;--gray:#6c757d;--border:#e9ecef}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);line-height:1.7;background:#fff}
-.container{max-width:720px;margin:0 auto;padding:0 24px}
-header{background:var(--cream);padding:40px 0 32px;border-bottom:3px solid var(--light-green)}
-header h1{font-size:1.6rem;color:var(--green);font-weight:700}
-header h1 a{color:var(--green);text-decoration:none}
-header p{color:var(--gray);font-size:.95rem;margin-top:4px}
-nav{margin-top:16px;display:flex;gap:24px;flex-wrap:wrap}
-nav a{color:var(--text);text-decoration:none;font-size:.9rem;font-weight:500}
-nav a:hover{color:var(--green)}
-main{padding:48px 0}
-.post{margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
-.post:last-child{border-bottom:none}
-.post h2{font-size:1.4rem;margin-bottom:8px;line-height:1.4}
-.post h2 a{color:var(--dark);text-decoration:none}
-.post h2 a:hover{color:var(--green)}
-.post .meta{font-size:.85rem;color:var(--gray);margin-bottom:12px}
-.post p{font-size:.95rem;margin-bottom:12px;color:#444}
-.post .read-more{display:inline-block;color:var(--green);font-weight:600;font-size:.9rem;text-decoration:none}
-.post .read-more:hover{text-decoration:underline}
-.affiliate-note{font-size:.8rem;color:var(--gray);margin-top:24px;padding-top:12px;border-top:1px solid var(--border)}
-.article h1{font-size:1.8rem;line-height:1.3;margin-bottom:8px;color:var(--dark)}
-.article .meta{font-size:.85rem;color:var(--gray);margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--border)}
-.article h2{font-size:1.3rem;margin:32px 0 12px;color:var(--dark)}
-.article h3{font-size:1.1rem;margin:24px 0 8px;color:var(--dark)}
-.article p,.article li{font-size:.95rem;color:#444;margin-bottom:12px}
-.article ul,.article ol{padding-left:24px;margin-bottom:16px}
-.article li{margin-bottom:6px}
-.article table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.9rem}
-.article th,.article td{padding:10px 12px;text-align:left;border:1px solid var(--border)}
-.article th{background:var(--cream);font-weight:600;color:var(--dark)}
-.article .product-review{margin:24px 0;padding:20px;background:var(--cream);border-radius:8px;border-left:4px solid var(--green)}
-.article .product-review h3{margin-top:0}
-.article .product-review .price{font-weight:700;color:var(--green)}
-footer{background:var(--cream);padding:32px 0;margin-top:48px;font-size:.85rem;color:var(--gray);text-align:center}
-footer a{color:var(--green);text-decoration:none}
-@media(max-width:600px){header h1{font-size:1.3rem}.article h1{font-size:1.4rem}.container{padding:0 16px}}
+:root{--green:#1a7a4a;--green-light:#e8f5ee;--green-dark:#0d4a2b;--cream:#f8faf9;--white:#fff;--dark:#0d0d0d;--text:#1a1a2e;--text2:#555;--text3:#888;--border:rgba(0,0,0,0.06);--border2:rgba(0,0,0,0.1);--shadow:rgba(0,0,0,0.03) 0px 2px 4px;--r:16px;--r-sm:8px;--pill:9999px}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);line-height:1.7;background:var(--white)}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* Header */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header .container{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;max-width:1100px;margin:0 auto}
+header .logo{font-size:1.15rem;font-weight:600;color:var(--dark);text-decoration:none}
+header .logo span{color:var(--green)}
+header nav{display:flex;gap:4px;align-items:center}
+header nav a{font-size:.875rem;font-weight:500;color:var(--text2);text-decoration:none;padding:6px 14px;border-radius:var(--pill);transition:all .2s}
+header nav a:hover{color:var(--dark);background:var(--cream)}
+header nav a.active{color:var(--green);background:var(--green-light)}
+@media(max-width:640px){header nav{display:none}}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,#f0f9f4 0%,#fff 100%);padding:80px 0 64px;text-align:center}
+.hero h1{font-size:2.5rem;font-weight:600;letter-spacing:-0.8px;line-height:1.15;color:var(--dark);max-width:700px;margin:0 auto 16px}
+.hero p{font-size:1.1rem;color:var(--text2);max-width:560px;margin:0 auto 32px;line-height:1.6}
+.hero .pill{display:inline-block;background:var(--green-light);color:var(--green-dark);font-size:.8rem;font-weight:600;padding:4px 14px;border-radius:var(--pill);margin-bottom:20px;text-transform:uppercase;letter-spacing:.5px}
+
+/* Post cards */
+.section-label{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--text3);margin-bottom:24px}
+.posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-bottom:48px}
+.post-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:28px;transition:all .25s}
+.post-card:hover{border-color:var(--border2);box-shadow:var(--shadow)}
+.post-card .cat-badge{display:inline-block;background:var(--green-light);color:var(--green);font-size:.75rem;font-weight:600;padding:2px 10px;border-radius:var(--pill);margin-bottom:12px}
+.post-card h2{font-size:1.15rem;font-weight:600;line-height:1.35;margin-bottom:8px}
+.post-card h2 a{color:var(--dark);text-decoration:none}
+.post-card h2 a:hover{color:var(--green)}
+.post-card .meta{font-size:.8rem;color:var(--text3);margin-bottom:10px}
+.post-card p{font-size:.88rem;color:var(--text2);line-height:1.55;margin-bottom:16px}
+.post-card .read-more{font-size:.85rem;font-weight:600;color:var(--green);text-decoration:none}
+.post-card .read-more:hover{text-decoration:underline}
+
+/* Article page */
+.article-wrap{max-width:720px;margin:0 auto;padding:48px 0}
+.article-header{margin-bottom:32px}
+.article-header .breadcrumb{font-size:.8rem;color:var(--text3);margin-bottom:12px}
+.article-header .breadcrumb a{color:var(--text3);text-decoration:none}
+.article-header .breadcrumb a:hover{color:var(--green)}
+.article-header h1{font-size:2rem;font-weight:600;letter-spacing:-0.5px;line-height:1.25;margin-bottom:8px}
+.article-header .meta{font-size:.85rem;color:var(--text3);padding-bottom:16px;border-bottom:1px solid var(--border)}
+.article-body{font-size:.95rem;line-height:1.75;color:var(--text)}
+.article-body h2{font-size:1.35rem;font-weight:600;margin:40px 0 12px}
+.article-body h3{font-size:1.1rem;font-weight:600;margin:28px 0 8px}
+.article-body p{margin-bottom:16px;color:#333}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:16px}
+.article-body li{margin-bottom:6px}
+.article-body table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.85rem}
+.article-body th,.article-body td{padding:10px 14px;text-align:left;border:1px solid var(--border)}
+.article-body th{background:var(--cream);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+
+/* Product card within articles */
+.product-card{border:1px solid var(--border);border-radius:var(--r);padding:24px;margin:24px 0}
+.product-card .winner{display:inline-block;background:#ffd700;color:#8a6d00;font-size:.7rem;font-weight:700;padding:2px 10px;border-radius:var(--pill);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.product-card h3{font-size:1.1rem;font-weight:600;margin-bottom:4px}
+.product-card .price{font-weight:600;color:var(--green);margin-bottom:8px}
+.product-card .pros{color:#2d6a4f;font-size:.85rem;margin-bottom:4px}
+.product-card .cons{color:#c0392b;font-size:.85rem;margin-bottom:12px}
+.product-card .btn{display:inline-block;background:var(--green);color:var(--white);font-size:.85rem;font-weight:600;padding:8px 22px;border-radius:var(--pill);text-decoration:none}
+.product-card .btn:hover{opacity:.9}
+
+/* Affiliate note */
+.affiliate-note{font-size:.78rem;color:var(--text3);margin-top:40px;padding-top:16px;border-top:1px solid var(--border)}
+
+/* Footer */
+footer{background:var(--cream);padding:40px 0;margin-top:64px;border-top:1px solid var(--border)}
+footer p{font-size:.82rem;color:var(--text3)}
+
+@media(max-width:600px){.hero h1{font-size:1.6rem}.hero{padding:48px 0 40px}.posts-grid{grid-template-columns:1fr}.article-header h1{font-size:1.4rem}}
