@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#166b3c"/>
+  <rect y="540" width="1200" height="90" fill="#0a4020"/>
+  <text x="600" y="240" font-family="Inter, Helvetica, sans-serif" font-size="72" font-weight="700" fill="#ffffff" text-anchor="middle">Temple Keep</text>
+  <text x="600" y="310" font-family="Inter, Helvetica, sans-serif" font-size="28" fill="#c4e6cf" text-anchor="middle">Evidence-Based Guides for a Cleaner Home</text>
+  <text x="600" y="350" font-family="Inter, Helvetica, sans-serif" font-size="28" fill="#c4e6cf" text-anchor="middle">and a Longer Life</text>
+  <text x="600" y="590" font-family="Inter, Helvetica, sans-serif" font-size="20" fill="#7aa88a" text-anchor="middle">templekeep.com</text>
+</svg>
