@@ -79,7 +79,7 @@
 
 | Metric | Current | Target |
 |--------|---------|--------|
-| Content articles written | 30 | 50 (Phase 2) |
+|| Content articles written | 33 | 50 (Phase 2) |
 | Category pages | 6 | 8 (all pillars) |
 | Affiliate networks signed | 1 (Amazon) | 4 (Amazon + Impact + SAS + CJ) |
 | Social accounts | 0 | 3 (IG, TT, YT) |
