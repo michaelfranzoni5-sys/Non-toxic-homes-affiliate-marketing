@@ -71,7 +71,7 @@
 - [ ] Instagram Reel series
 - [ ] TikTok shop setup
 - [ ] Phone app for Temple Keep (way out)
-- [ ] Write Phase 2 articles (21-50) — Article 21 ✅ Jul 3 · Article 22 ✅ Jul 4 · Article 23 ✅ Jul 6 · Article 24 ✅ Jul 7
+|- [ ] Write Phase 2 articles (21-50) — Article 21 ✅ Jul 3 · Article 22 ✅ Jul 4 · Article 23 ✅ Jul 6 · Article 24 ✅ Jul 7 · Article 25 ✅ Jul 8
 
 ---
 
@@ -79,7 +79,7 @@
 
 | Metric | Current | Target |
 |--------|---------|--------|
-| Content articles written | 27 | 50 (Phase 2) |
+| Content articles written | 30 | 50 (Phase 2) |
 | Category pages | 6 | 8 (all pillars) |
 | Affiliate networks signed | 1 (Amazon) | 4 (Amazon + Impact + SAS + CJ) |
 | Social accounts | 0 | 3 (IG, TT, YT) |
