@@ -119,6 +119,14 @@
       flex-shrink: 0;
     }
     .header-nav a:hover { color: #0d0d0d; background: #f7f8f5; }
+    .header-nav .nav-item { position: relative; }
+    .header-nav .nav-item > a { display: inline-flex; align-items: center; gap: 4px; }
+    .header-nav .nav-item > a::after { content: '▾'; font-size: .6rem; color: #888; transition: transform .2s; }
+    .header-nav .nav-item:hover > a::after { transform: rotate(180deg); }
+    .header-nav .nav-dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); padding: 12px 0; min-width: 200px; z-index: 200; }
+    .header-nav .nav-item:hover .nav-dropdown { display: block; }
+    .header-nav .nav-dropdown a { display: block; padding: 8px 20px; font-size: .82rem; color: #555; text-decoration: none; white-space: nowrap; border-radius: 0; }
+    .header-nav .nav-dropdown a:hover { color: #166b3c; background: #eaf5f0; }
     .hamburger {
       display: none;
       flex-direction: column;
@@ -293,20 +301,87 @@
 <body>
 
 <header class="site-header">
-  <div class="header-inner">
+  <div class="header-top">
+    <div class="header-top-left">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-input" placeholder="Search Temple Keep..." onkeydown="if(event.key==='Enter'){var q=this.value.trim();if(q)window.location='https://www.google.com/search?q=site:templekeep.com+'+encodeURIComponent(q)}">
+    </div>
     <a href="/" class="site-logo">temple<span>keep</span></a>
-    <nav class="nav-links">
-      <a href="/">Home</a>
-      <a href="/blog/water-filters/">Water</a>
-      <a href="/blog/air-purifiers/">Air</a>
-      <a href="/blog/cookware/">Cookware</a>
-      <a href="/blog/sleep/">Sleep</a>
-      <a href="/blog/cleaning/">Cleaning</a>
-      <a href="/blog/supplements/">Supplements</a>
+    <div class="header-utils">
       <a href="/about.html">About</a>
-    </nav>
+    </div>
     <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-    <a href="/guides.html" class="search-icon" aria-label="Search guides">🔍</a>
+  </div>
+  <div class="header-bottom" style="border-top: 1px solid rgba(0,0,0,0.06);">
+    <nav class="header-nav">
+      <a href="/">Home</a>
+      <a href="/guides.html">All Guides</a>
+      <span class="nav-item">
+        <a href="/blog/water-filters/">Water</a>
+        <div class="nav-dropdown">
+          <a href="/blog/water-filters/best-water-filters-2026.html">Best Water Filters 2026</a>
+          <a href="/blog/water-filters/best-countertop-reverse-osmosis.html">Countertop RO Systems</a>
+          <a href="/blog/water-filters/pfas-water-filters.html">PFAS Water Filters</a>
+          <a href="/blog/water-filters/best-under-sink-water-filter.html">Best Under-Sink Filters</a>
+          <a href="/blog/water-filters/waterdrop-d4-review.html">Waterdrop D4 Review</a>
+        </div>
+      </span>
+      <span class="nav-item">
+        <a href="/blog/air-purifiers/">Air</a>
+        <div class="nav-dropdown">
+          <a href="/blog/air-purifiers/best-air-purifiers-allergies-2026.html">Best Air Purifiers for Allergies</a>
+          <a href="/blog/air-purifiers/budget-air-purifiers-under-200.html">Budget Air Purifiers</a>
+          <a href="/blog/air-purifiers/levoit-core-300-review.html">Levoit Core 300 Review</a>
+          <a href="/blog/air-purifiers/best-hepa-air-purifiers-under-500.html">Best HEPA Under $500</a>
+          <a href="/blog/air-purifiers/winix-5500-2-review.html">Winix 5500-2 Review</a>
+        </div>
+      </span>
+      <span class="nav-item">
+        <a href="/blog/cookware/">Cookware</a>
+        <div class="nav-dropdown">
+          <a href="/blog/cookware/best-non-toxic-cookware-2026.html">Best Non-Toxic Cookware</a>
+          <a href="/blog/cookware/ceramic-vs-stainless-steel-cookware.html">Ceramic vs Stainless Steel</a>
+          <a href="/blog/cookware/best-non-toxic-pans-2026.html">Best Non-Toxic Pans</a>
+          <a href="/blog/cookware/best-non-toxic-water-bottles.html">Best Water Bottles</a>
+        </div>
+      </span>
+      <span class="nav-item">
+        <a href="/blog/sleep/">Sleep</a>
+        <div class="nav-dropdown">
+          <a href="/blog/sleep/best-organic-mattresses-2026.html">Best Organic Mattresses</a>
+          <a href="/blog/sleep/best-non-toxic-pillows-2026.html">Best Pillows</a>
+          <a href="/blog/sleep/best-non-toxic-bed-sheets-2026.html">Best Bed Sheets</a>
+        </div>
+      </span>
+      <span class="nav-item">
+        <a href="/blog/cleaning/">Cleaning</a>
+        <div class="nav-dropdown">
+          <a href="/blog/cleaning/best-non-toxic-cleaning-products-2026.html">Best Cleaning Products</a>
+          <a href="/blog/cleaning/branch-basics-review.html">Branch Basics Review</a>
+          <a href="/blog/cleaning/best-non-toxic-laundry-detergent-2026.html">Best Laundry Detergent</a>
+        </div>
+      </span>
+      <span class="nav-item">
+        <a href="/blog/supplements/">Supplements</a>
+        <div class="nav-dropdown">
+          <a href="/blog/supplements/best-supplements-for-longevity.html">Best Longevity Supplements</a>
+          <a href="/blog/supplements/best-magnesium-supplement.html">Best Magnesium</a>
+          <a href="/blog/supplements/best-omega-3-supplements-2026.html">Best Omega-3</a>
+          <a href="/blog/supplements/vitamin-d-guide.html">Vitamin D Guide</a>
+        </div>
+      </span>
+    </nav>
+  </div>
+  <div class="header-nav-mobile">
+    <a href="/">Home</a>
+    <a href="/guides.html">All Guides</a>
+    <a href="/blog/water-filters/">Water</a>
+    <a href="/blog/air-purifiers/">Air</a>
+    <a href="/blog/cookware/">Cookware</a>
+    <a href="/blog/sleep/">Sleep</a>
+    <a href="/blog/cleaning/">Cleaning</a>
+    <a href="/blog/supplements/">Supplements</a>
+    <a href="/about.html">About</a>
   </div>
 </header>
 
