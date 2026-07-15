@@ -15,7 +15,8 @@
   <meta name="twitter:description" content="Looking for the best non-toxic water bottle? We review Hydro Flask, Yeti, S'well, Klean Kanteen, and top glass bottle options.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="/assets/css/style.css">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,529 +31,442 @@
   }
 }
 </script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.7;
-      color: #1a1a2e;
-      background: #f8f9fa;
-      padding: 0;
-    }
-    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-    header {
-      background: linear-gradient(135deg, #1a535c 0%, #2a9d8f 100%);
-      color: #fff;
-      padding: 48px 0 40px;
-      text-align: center;
-    }
-    header h1 { font-size: 2rem; margin-bottom: 12px; }
-    header p { font-size: 1.05rem; opacity: .9; max-width: 600px; margin: 0 auto; }
-    main { padding: 40px 0 60px; }
-    article h2 { font-size: 1.5rem; margin: 40px 0 16px; color: #1a535c; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; }
-    article h3 { font-size: 1.2rem; margin: 28px 0 12px; color: #2a9d8f; }
-    article p { margin-bottom: 16px; }
-    article ul, article ol { margin: 0 0 16px 24px; }
-    article li { margin-bottom: 8px; }
-    .toc {
-      background: #e8f4f1;
-      border-radius: 12px;
-      padding: 24px 28px;
-      margin: 24px 0 32px;
-    }
-    .toc h3 { margin-top: 0; color: #1a535c; }
-    .toc ol { margin-bottom: 0; }
-    .toc a { color: #2a9d8f; text-decoration: none; font-weight: 500; }
-    .toc a:hover { text-decoration: underline; }
 
-    .product-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
-      border-left: 4px solid #2a9d8f;
-    }
-    .product-card h3 { margin-top: 0; }
-    .product-card .pros-cons {
-      display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px;
-    }
-    .product-card .pros, .product-card .cons { flex: 1; min-width: 140px; }
-    .product-card .pros h4, .product-card .cons h4 { font-size: .9rem; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
-    .product-card .pros ul, .product-card .cons ul { margin: 0 0 0 16px; }
-    .product-card .pros li { color: #2a9d8f; }
-    .product-card .cons li { color: #e76f51; }
+<style>
+  /* Article-specific: water bottles custom components */
+  .article-body .toc {
+    background: var(--green-light);
+    border-radius: var(--r);
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .article-body .toc h3 { margin-top: 0; }
+  .article-body .toc a { color: var(--green); text-decoration: none; font-weight: 500; }
+  .article-body .toc a:hover { text-decoration: underline; }
 
-    .badge {
-      display: inline-block;
-      background: #2a9d8f;
-      color: #fff;
-      font-size: .75rem;
-      font-weight: 600;
-      padding: 2px 10px;
-      border-radius: 20px;
-      margin-right: 6px;
-      text-transform: uppercase;
-      letter-spacing: .4px;
-    }
-    .badge.glass { background: #457b9d; }
-    .badge.kids { background: #e76f51; }
-    .badge.gym { background: #f4a261; }
-    .badge.hiking { background: #264653; }
+  .article-body .product-card {
+    border-left: 4px solid var(--green);
+  }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 24px 0;
-      font-size: .9rem;
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
-    }
-    thead { background: #1a535c; color: #fff; }
-    th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #eee; }
-    th { font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .4px; }
-    tr:last-child td { border-bottom: none; }
-    tr:nth-child(even) { background: #f8f9fa; }
+  .article-body .badge {
+    display: inline-block;
+    background: var(--green);
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: var(--pill);
+    margin-right: 4px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+  .article-body .badge.glass { background: #457b9d; }
+  .article-body .badge.kids { background: #e76f51; }
+  .article-body .badge.gym { background: #f4a261; }
+  .article-body .badge.hiking { background: #264653; }
 
-    .callout {
-      background: #fff3cd;
-      border-left: 4px solid #f4a261;
-      padding: 16px 20px;
-      border-radius: 8px;
-      margin: 24px 0;
-    }
-    .callout.info { background: #d1ecf1; border-color: #457b9d; }
-    .callout.danger { background: #f8d7da; border-color: #e76f51; }
+  .article-body .callout {
+    background: var(--gold-light);
+    border-left: 4px solid var(--gold);
+    padding: 16px 20px;
+    border-radius: var(--r-sm);
+    margin: 24px 0;
+  }
+  .article-body .callout.info { background: #d1ecf1; border-color: #457b9d; }
+  .article-body .callout.danger { background: #f8d7da; border-color: #e76f51; }
 
-    .faq-item { margin-bottom: 20px; }
-    .faq-item h4 { font-weight: 600; margin-bottom: 6px; color: #1a535c; }
-
-    footer {
-      text-align: center;
-      padding: 24px 0;
-      font-size: .85rem;
-      color: #6c757d;
-      border-top: 1px solid #e0e0e0;
-    }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.5rem; }
-      .pros-cons { flex-direction: column; gap: 10px; }
-      table { font-size: .8rem; }
-      th, td { padding: 8px 10px; }
-    }
-  </style>
+  .article-body .faq-item { margin-bottom: 20px; }
+  .article-body .faq-item h4 { font-weight: 600; margin-bottom: 6px; color: var(--text); }
+</style>
 </head>
 <body>
-
-<header>
-  <div class="container">
-    <h1>Best Non-Toxic Water Bottles 2026 — Stainless Steel, Glass &amp; More</h1>
-    <p>Your complete guide to hydration without harmful chemicals. We review the top non-toxic water bottles for every lifestyle — from desk to trail.</p>
-  </div>
-</header>
-
-<main class="container">
-  <article>
-
-    <!-- Introduction -->
-    <p>Staying hydrated is one of the simplest health habits, but if you're drinking from the wrong bottle, you could be exposing yourself to endocrine-disrupting chemicals with every sip. The search for the <strong>best non-toxic water bottle</strong> is more important than ever in 2026, as research continues to reveal the hidden dangers lurking in many plastic and even some metal containers.</p>
-
-    <p>Whether you're filling up at the office, hitting the gym, summiting a peak, or packing a lunchbox for your kids, the material your bottle is made from matters. In this comprehensive roundup, we break down why plastic is problematic, compare the top stainless steel and glass options, and help you choose the perfect bottle for your needs.</p>
-
-    <!-- Table of Contents -->
-    <div class="toc">
-      <h3>What's Inside</h3>
-      <ol>
-        <li><a href="#why-plastic">Why Plastic Water Bottles Are Problematic</a></li>
-        <li><a href="#what-to-look">What to Look for in a Non-Toxic Water Bottle</a></li>
-        <li><a href="#hydro-flask">Hydro Flask — The Insulated All-Rounder</a></li>
-        <li><a href="#yeti">YETI Rambler — The Indestructible Workhorse</a></li>
-        <li><a href="#swell">S'well — Style Meets Performance</a></li>
-        <li><a href="#klean-kanteen">Klean Kanteen — The Pioneer of Non-Toxic Hydration</a></li>
-        <li><a href="#glass">Best Glass Water Bottles — The Purest Sip</a></li>
-        <li><a href="#comparison">Comparison Table</a></li>
-        <li><a href="#recommendations">Recommendations by Use Case</a></li>
-        <li><a href="#faq">Frequently Asked Questions</a></li>
-      </ol>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">temple<span>keep</span></a>
+      <nav>
+        <a href="/">Home</a><a href="/blog/water-filters/">Water</a><a href="/blog/air-purifiers/">Air</a><a href="/blog/cookware/">Cookware</a><a href="/blog/sleep/">Sleep</a><a href="/blog/cleaning/">Cleaning</a><a href="/blog/supplements/">Supplements</a>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
+  </header>
 
-    <!-- Section 1: Why Plastic -->
-    <h2 id="why-plastic">1. Why Plastic Water Bottles Are Problematic</h2>
-
-    <p>Despite their ubiquity and low cost, plastic water bottles come with a growing list of health and environmental concerns that make them a poor choice for daily hydration.</p>
-
-    <h3>BPA and BPS Leaching</h3>
-    <p>Bisphenol A (BPA) is a chemical used to harden polycarbonate plastics. It's a known endocrine disruptor — it mimics estrogen in the body and has been linked to hormonal imbalances, fertility issues, and certain cancers. Many manufacturers responded to consumer backlash by switching to "BPA-free" plastics, but studies have found that replacements like Bisphenol S (BPS) and Bisphenol F (BPF) carry similar endocrine-disrupting risks. A 2020 study in <em>Environmental Health Perspectives</em> found that BPS was actually <strong>more potent</strong> than BPA in some cellular assays.</p>
-
-    <div class="callout danger">
-      <strong>⚠️ Key Concern:</strong> Heat dramatically increases leaching. Leaving a plastic water bottle in a hot car or running it through the dishwasher accelerates the release of BPA/BPS into your water.
-    </div>
-
-    <h3>Microplastic Shedding</h3>
-    <p>Every time you open, close, squeeze, or wash a plastic bottle, microscopic plastic particles flake off into the water. A 2019 study from the State University of New York found that bottled water contained an average of <strong>325 microplastic particles per liter</strong>. These particles can carry adsorbed toxins into your digestive system and beyond. While the full health implications are still being studied, early research suggests chronic inflammation, gut microbiome disruption, and potential accumulation in organs.</p>
-
-    <h3>Other Chemical Leachates</h3>
-    <p>Beyond bisphenols, plastic bottles can leach phthalates (used to increase flexibility), antimony (a catalyst in PET production), and various UV stabilizers — many of which are suspected carcinogens or endocrine disruptors.</p>
-
-    <!-- Section 2: What to Look For -->
-    <h2 id="what-to-look">2. What to Look for in a Non-Toxic Water Bottle</h2>
-
-    <p>When shopping for a truly safe water bottle, keep these criteria in mind:</p>
-
-    <ul>
-      <li><strong>Material:</strong> 18/8 or 304 stainless steel (food-grade, rust-resistant), borosilicate glass, or high-purity silicone (for collapsible bottles).</li>
-      <li><strong>Lining:</strong> Avoid internal plastic linings or epoxy coatings. Look for bottles with a stainless steel interior — no lining needed.</li>
-      <li><strong>Lid:</strong> The lid is often the weak point. Look for stainless steel caps, or at minimum BPA/BPS-free polypropylene (PP, #5) or Tritan lids.</li>
-      <li><strong>Purity Certifications:</strong> Look for bottles certified to meet FDA food-grade standards, and ideally third-party tested (e.g., LFGB, SGS, or similar).</li>
-      <li><strong>Durability:</strong> Double-wall vacuum insulation keeps contents hot or cold for hours and provides structural integrity.</li>
-    </ul>
-
-    <div class="callout info">
-      <strong>💡 Pro Tip:</strong> Even "stainless steel" bottles can have aluminum cores or epoxy linings. Always verify the interior is pure stainless steel — not coated.
-    </div>
-
-    <!-- Section 3: Hydro Flask -->
-    <h2 id="hydro-flask">3. Hydro Flask — The Insulated All-Rounder</h2>
-
-    <div class="product-card">
-      <p><span class="badge">EDITOR'S CHOICE</span> <span class="badge hiking">HIKING</span> <span class="badge gym">GYM</span></p>
-      <p><strong>Best for:</strong> Everyday use, outdoor adventures, and temperature retention.</p>
-
-      <p>Hydro Flask has become synonymous with high-performance insulated hydration. The standard Wide Mouth or Flex Sip bottles feature 18/8 pro-grade stainless steel construction with a proprietary powder-coat finish that provides excellent grip and durability.</p>
-
-      <p>The interior is pure stainless steel — no lining, no epoxy — with a TempShield double-wall vacuum insulation that keeps drinks cold for up to 24 hours or hot for up to 12. The lid uses BPA-free polypropylene, which is one of the safer plastics.</p>
-
-      <p>One of Hydro Flask's standout features is the range of sizes (12 oz to 64 oz) and the interchangeable lid system (straw, chug, flex sip, or standard cap). The wide mouth also makes cleaning easy, and the bottle is dishwasher safe (top rack).</p>
-
-      <div class="pros-cons">
-        <div class="pros">
-          <h4>✅ Pros</h4>
-          <ul>
-            <li>Pure stainless steel interior</li>
-            <li>Excellent insulation (24 hr cold / 12 hr hot)</li>
-            <li>Wide size range</li>
-            <li>Durable powder-coat finish</li>
-            <li>Interchangeable lid system</li>
-            <li>Dishwasher safe</li>
-          </ul>
-        </div>
-        <div class="cons">
-          <h4>❌ Cons</h4>
-          <ul>
-            <li>Heavy when full</li>
-            <li>Lid still uses plastic</li>
-            <li>Pricey (around $35–$50)</li>
-            <li>Not suitable for hot liquids with narrow mouth (burn risk)</li>
-          </ul>
-        </div>
+  <main class="article-wrap">
+    <article>
+      <div class="article-header">
+        <div class="breadcrumb"><a href="/">Home</a> / <a href="/blog/cookware/">Cookware</a></div>
+        <h1>Best Non-Toxic Water Bottles 2026 — Stainless Steel, Glass &amp; More</h1>
+        <div class="meta">Updated July 2026 · 6 products compared · Category: Cookware</div>
       </div>
-    </div>
+      <div class="article-body">
 
-    <!-- Section 4: YETI -->
-    <h2 id="yeti">4. YETI Rambler — The Indestructible Workhorse</h2>
+<p>Staying hydrated is one of the simplest health habits, but if you're drinking from the wrong bottle, you could be exposing yourself to endocrine-disrupting chemicals with every sip. The search for the <strong>best non-toxic water bottle</strong> is more important than ever in 2026, as research continues to reveal the hidden dangers lurking in many plastic and even some metal containers.</p>
 
-    <div class="product-card">
-      <p><span class="badge hiking">HIKING</span> <span class="badge">DURABILITY</span></p>
-      <p><strong>Best for:</strong> Tough outdoor use, hot beverages, and heavy-duty demands.</p>
+<p>Whether you're filling up at the office, hitting the gym, summiting a peak, or packing a lunchbox for your kids, the material your bottle is made from matters. In this comprehensive roundup, we break down why plastic is problematic, compare the top stainless steel and glass options, and help you choose the perfect bottle for your needs.</p>
 
-      <p>YETI's Rambler line is built like a tank. The 18/8 stainless steel body is kitchen-grade, and the double-wall vacuum insulation (YETI calls it "NoraVac") keeps ice frozen for days — even in direct sun. The interior is unlined stainless steel.</p>
+<div class="toc">
+  <h3>What's Inside</h3>
+  <ol>
+    <li><a href="#why-plastic">Why Plastic Water Bottles Are Problematic</a></li>
+    <li><a href="#what-to-look">What to Look for in a Non-Toxic Water Bottle</a></li>
+    <li><a href="#hydro-flask">Hydro Flask — The Insulated All-Rounder</a></li>
+    <li><a href="#yeti">YETI Rambler — The Indestructible Workhorse</a></li>
+    <li><a href="#swell">S'well — Style Meets Performance</a></li>
+    <li><a href="#klean-kanteen">Klean Kanteen — The Pioneer of Non-Toxic Hydration</a></li>
+    <li><a href="#glass">Best Glass Water Bottles — The Purest Sip</a></li>
+    <li><a href="#comparison">Comparison Table</a></li>
+    <li><a href="#recommendations">Recommendations by Use Case</a></li>
+    <li><a href="#faq">Frequently Asked Questions</a></li>
+  </ol>
+</div>
 
-      <p>The MagSlider lid is made from BPA-free polypropylene with a magnetic mechanism that helps prevent sloshing. YETI bottles are also dishwasher safe and come in sizes from 12 oz to half-gallon.</p>
+<h2 id="why-plastic">1. Why Plastic Water Bottles Are Problematic</h2>
 
-      <p>YETI's reputation for ruggedness is well earned. The DuraCoat finish resists scratches and fading, and these bottles have survived drops off cliffs and through car washes (user-reported). However, they are heavier and pricier than many competitors.</p>
+<p>Despite their ubiquity and low cost, plastic water bottles come with a growing list of health and environmental concerns that make them a poor choice for daily hydration.</p>
 
-      <div class="pros-cons">
-        <div class="pros">
-          <h4>✅ Pros</h4>
-          <ul>
-            <li>Nearly indestructible</li>
-            <li>Superior cold retention (days, not hours)</li>
-            <li>Unlined 18/8 steel interior</li>
-            <li>Dishwasher safe</li>
-            <li>MagSlider lid resists spills</li>
-          </ul>
-        </div>
-        <div class="cons">
-          <h4>❌ Cons</h4>
-          <ul>
-            <li>Heaviest in this roundup</li>
-            <li>Expensive ($40–$60)</li>
-            <li>Plastic lid component (though BPA-free)</li>
-            <li>Narrow mouth on some models makes cleaning harder</li>
-          </ul>
-        </div>
+<h3>BPA and BPS Leaching</h3>
+<p>Bisphenol A (BPA) is a chemical used to harden polycarbonate plastics. It's a known endocrine disruptor — it mimics estrogen in the body and has been linked to hormonal imbalances, fertility issues, and certain cancers. Many manufacturers responded to consumer backlash by switching to "BPA-free" plastics, but studies have found that replacements like Bisphenol S (BPS) and Bisphenol F (BPF) carry similar endocrine-disrupting risks. A 2020 study in <em>Environmental Health Perspectives</em> found that BPS was actually <strong>more potent</strong> than BPA in some cellular assays.</p>
+
+<div class="callout danger">
+  <strong>⚠️ Key Concern:</strong> Heat dramatically increases leaching. Leaving a plastic water bottle in a hot car or running it through the dishwasher accelerates the release of BPA/BPS into your water.
+</div>
+
+<h3>Microplastic Shedding</h3>
+<p>Beyond bisphenols, plastic bottles shed microscopic plastic particles — microplastics and nanoplastics — directly into your water. A 2019 study published in <em>Environmental Science &amp; Technology</em> found that the average person ingests approximately 5 grams of plastic per week through food and water combined — roughly the weight of a credit card. A significant portion comes from container materials themselves, especially when bottles are reused, shaken, or exposed to heat. Stainless steel and glass bottles completely eliminate this contamination vector.</p>
+
+<hr />
+
+<h2 id="what-to-look">2. What to Look for in a Non-Toxic Water Bottle</h2>
+
+<p>Not all "non-toxic" water bottles are created equal. Here's what separates a safe bottle from one that's merely marketed as safe:</p>
+
+<table>
+<thead>
+<tr>
+  <th>Feature</th>
+  <th>What to Look For</th>
+  <th>What to Avoid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Material</strong></td>
+  <td>18/8 (304) stainless steel, borosilicate glass</td>
+  <td>Plastic, aluminum (lined), copper (unlined)</td>
+</tr>
+<tr>
+  <td><strong>Liner</strong></td>
+  <td>Unlined stainless steel interior</td>
+  <td>Epoxy, polymer, or "plasma" coatings</td>
+</tr>
+<tr>
+  <td><strong>Cap / Lid</strong></td>
+  <td>Stainless steel, silicone, #5 polypropylene</td>
+  <td>#7 polycarbonate, polycarbonate, Tritan</td>
+</tr>
+<tr>
+  <td><strong>Certifications</strong></td>
+  <td>FDA food-grade, BPA-free, LFGB (EU)</td>
+  <td>No certification listed</td>
+</tr>
+<tr>
+  <td><strong>Manufacturer</strong></td>
+  <td>Klean Kanteen, Hydro Flask, LifeFactory, BKR, S'well</td>
+  <td>No-name brands, unbranded imports</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2>3–6. Top Stainless Steel Water Bottles</h2>
+
+<h3 id="hydro-flask">🥇 Hydro Flask Standard Mouth — Best Insulated All-Rounder</h3>
+<div class="product-card">
+  <p><span class="badge">Best Seller</span> <span class="badge gym">Gym</span> <span class="badge hiking">Hiking</span></p>
+  <p><strong>Price:</strong> ~$35–$45</p>
+  <p><strong>Type:</strong> 18/8 stainless steel, double-wall vacuum insulated</p>
+  <p><strong>Cap:</strong> BPA-free polypropylene Flex Cap (standard) or stainless steel cap (sold separately)</p>
+  <p><strong>Sizes:</strong> 18 oz, 21 oz, 24 oz, 32 oz, 40 oz</p>
+  <p>Hydro Flask is the brand that made insulated stainless steel bottles mainstream — and for good reason. The TempShield double-wall vacuum insulation keeps water cold for up to 24 hours (or hot for 12), and the 18/8 stainless steel interior is completely unlined and non-reactive. The powder-coat finish provides excellent grip even with wet hands, and the wide range of sizes covers everything from a quick run to a full day hike.</p>
+  <p><strong>Pros:</strong>
+  <br/>— Excellent insulation (24 hours cold / 12 hours hot)
+  <br/>— Durable 18/8 steel, unlined interior
+  <br/>— Wide range of sizes and colors
+  <br/>— Powder-coat finish resists scratches and provides grip</p>
+  <p><strong>Cons:</strong>
+  <br/>— Standard cap is #5 polypropylene (not fully stainless)
+  <br/>— Not dishwasher safe (hand wash recommended)
+  <br/>— Heavier than non-insulated bottles</p>
+  <p><strong>Best For:</strong> All-purpose use: office, gym, hiking, travel. The 24 oz and 32 oz are the most versatile sizes.</p>
+  <p><a class="btn" href="https://www.amazon.com/s?k=Hydro+Flask+standard+mouth+water+bottle&tag=hockeytrain0c-20" target="_blank" rel="nofollow sponsored">Check Price on Amazon →</a></p>
+</div>
+
+<h3 id="yeti">🥇 YETI Rambler — The Indestructible Workhorse</h3>
+<div class="product-card">
+  <p><span class="badge">Durable</span> <span class="badge hiking">Hiking</span></p>
+  <p><strong>Price:</strong> ~$40–$50</p>
+  <p><strong>Type:</strong> 18/8 stainless steel, double-wall vacuum insulated (Kitchen-grade 18/8)</p>
+  <p><strong>Cap:</strong> MagSlider lid (magnetic) in BPA-free plastic; stainless steel cup cap available</p>
+  <p><strong>Sizes:</strong> 18 oz, 26 oz, 36 oz, 46 oz, 64 oz</p>
+  <p>YETI is the brand that people buy when they need a bottle that can survive anything. The Rambler line uses North American-sourced 18/8 stainless steel with a kitchen-grade finish and double-wall vacuum insulation. The MagSlider lid uses a magnetic mechanism that's both satisfying and functional — though it's still plastic. YETI's Duracoat finish is exceptionally tough, and the bottles are dishwasher safe, which makes maintenance easier than many competitors.</p>
+  <p><strong>Pros:</strong>
+  <br/>— Toughest bottle on the market — nearly indestructible
+  <br/>— Kitchen-grade 18/8 steel, unlined interior
+  <br/>— Dishwasher safe
+  <br/>— Excellent insulation performance</p>
+  <p><strong>Cons:</strong>
+  <br/>— Heavy — one of the heaviest bottles on this list
+  <br/>— Expensive
+  <br/>— MagSlider lid is plastic (cap accessory available in stainless)</p>
+  <p><strong>Best For:</strong> Outdoor adventures, job sites, and anyone who has broken bottles in the past. The 36 oz is the sweet spot for all-day hydration.</p>
+  <p><a class="btn" href="https://www.amazon.com/s?k=YETI+Rambler+water+bottle&tag=hockeytrain0c-20" target="_blank" rel="nofollow sponsored">Check Price on Amazon →</a></p>
+</div>
+
+<h3 id="swell">🥇 S'well — Style Meets Performance</h3>
+<div class="product-card">
+  <p><span class="badge">Style</span> <span class="badge gym">Gym</span></p>
+  <p><strong>Price:</strong> ~$25–$45</p>
+  <p><strong>Type:</strong> 18/8 stainless steel, triple-wall vacuum insulated</p>
+  <p><strong>Cap:</strong> BPA-free polypropylene</p>
+  <p><strong>Sizes:</strong> 9 oz, 17 oz, 25 oz</p>
+  <p>S'well pioneered the fashion-forward water bottle category with its distinctive tapered shape and extensive color and pattern selection. The triple-wall insulation keeps water cold for up to 24 hours and hot for up to 12 — on par with Hydro Flask and YETI despite the narrower mouth. The 9 oz wine-bottle shape is particularly popular for office use where aesthetics matter. S'well is also a certified B Corp and partners with UNICEF to provide clean water to children in need.</p>
+  <p><strong>Pros:</strong>
+  <br/>— Most stylish and design-forward bottle on the market
+  <br/>— Triple-wall insulation (24 hours cold / 12 hours hot)
+  <br/>— B Corp certified, partners with UNICEF
+  <br/>— No condensation on exterior</p>
+  <p><strong>Cons:</strong>
+  <br/>— Narrow mouth makes cleaning and ice cube insertion difficult
+  <br/>— Smaller capacity options (max 25 oz)
+  <br/>— Prone to denting if dropped (outer layer cosmetic damage)</p>
+  <p><strong>Best For:</strong> Office, commuting, and anyone who wants a bottle that looks as good as it performs.</p>
+  <p><a class="btn" href="https://www.amazon.com/s?k=Swell+water+bottle+stainless+steel&tag=hockeytrain0c-20" target="_blank" rel="nofollow sponsored">Check Price on Amazon →</a></p>
+</div>
+
+<h3 id="klean-kanteen">🥇 Klean Kanteen Classic — The Pioneer of Non-Toxic Hydration</h3>
+<div class="product-card">
+  <p><span class="badge">Best Value</span> <span class="badge kids">Kids</span></p>
+  <p><strong>Price:</strong> ~$20–$35</p>
+  <p><strong>Type:</strong> 18/8 stainless steel (standard or wide mouth); insulated TKWide also available</p>
+  <p><strong>Cap:</strong> 100% stainless steel cap (sold separately) or BPA-free #5 polypropylene sports cap</p>
+  <p><strong>Sizes:</strong> 12 oz to 64 oz; Kid Kanteen starts at 12 oz</p>
+  <p>Klean Kanteen is the most important brand on this list. They were the first major company to produce a stainless steel water bottle specifically to address concerns about plastic leaching — and they've remained the most committed to full non-toxicity. The Klean Kanteen Classic with the stainless steel cap is the <strong>only fully plastic-free water bottle</strong> on this list — no plastic touches your water from bottle to lip. Available in standard or wide mouth, insulated (TKWide) or non-insulated, and in sizes from 12 oz children's bottles to 64 oz growlers.</p>
+  <p><strong>Pros:</strong>
+  <br/>— Available with 100% stainless steel cap (no plastic contact)
+  <br/>— Made from 18/8 (304) stainless steel
+  <br/>— Affordable — best value on the list
+  <br/>— Wide range of sizes including kid-friendly options
+  <br/>— B Corp certified, Climate Neutral certified</p>
+  <p><strong>Cons:</strong>
+  <br/>— Stainless steel cap sold separately (~$10)
+  <br/>— Non-insulated version can sweat (but is lighter)
+  <br/>— Coating can chip over time on colored models</p>
+  <p><strong>Best For:</strong> Anyone who wants the safest possible bottle at the best price. The Kid Kanteen is the safest option for children. Pair with the stainless steel cap for zero plastic contact.</p>
+  <p><a class="btn" href="https://www.amazon.com/s?k=Klean+Kanteen+stainless+steel+water+bottle&tag=hockeytrain0c-20" target="_blank" rel="nofollow sponsored">Check Price on Amazon →</a></p>
+</div>
+
+<hr />
+
+<h2 id="glass">7. Best Glass Water Bottles — The Purest Sip</h2>
+
+<p>For absolute zero chemical interaction, nothing beats glass. Borosilicate glass — like the kind used in laboratory glassware — is non-reactive, non-porous, and completely inert. It won't leach anything into your water, won't retain flavors, and won't scratch or degrade over time. The trade-off is weight and fragility, but modern glass bottles with silicone sleeves solve most of the durability concerns.</p>
+
+<h3>LifeFactory Glass Bottle</h3>
+<div class="product-card">
+  <p><span class="badge">Purest</span> <span class="badge glass">Glass</span></p>
+  <p><strong>Price:</strong> ~$20–$30</p>
+  <p><strong>Type:</strong> Tempered borosilicate glass with protective silicone sleeve</p>
+  <p><strong>Cap:</strong> BPA-free polypropylene (standard), stainless steel or bamboo caps available</p>
+  <p><strong>Sizes:</strong> 9 oz, 12 oz, 17 oz, 22 oz</p>
+  <p>LifeFactory makes the most popular glass water bottle on the market. The tempered borosilicate glass is tough enough to survive everyday use, and the colorful silicone sleeve provides drop protection (up to 5 feet onto concrete, according to the company). The wide mouth fits most cupholders and makes cleaning easy. LifeFactory bottles are also compatible with a range of cap options including straw lids, flip caps, and stainless steel, and the company offers a range of glass food storage containers as well.</p>
+  <p><strong>Pros:</strong>
+  <br/>— Borosilicate glass — completely non-reactive and non-porous
+  <br/>— Protective silicone sleeve in multiple colors
+  <br/>— Wide mouth for easy cleaning and ice
+  <br/>— Multiple cap options (stainless steel available)
+  <br/>— Compatible with LifeFactory's glass food storage line</p>
+  <p><strong>Cons:</strong>
+  <br/>— Heavier than stainless steel
+  <br/>— Can still break if dropped hard enough
+  <br/>— Not insulated — condensation can form
+  <br/>— Narrower size range than stainless competitors</p>
+  <p><strong>Best For:</strong> Desk use, home, and anyone who prioritizes purity over portability.</p>
+  <p><a class="btn" href="https://www.amazon.com/s?k=LifeFactory+glass+water+bottle&tag=hockeytrain0c-20" target="_blank" rel="nofollow sponsored">Check Price on Amazon →</a></p>
+</div>
+
+<h3>BKR Water Bottle</h3>
+<div class="product-card">
+  <p><span class="badge">Style</span> <span class="badge glass">Glass</span></p>
+  <p><strong>Price:</strong> ~$30–$40</p>
+  <p><strong>Type:</strong> Borosilicate glass with silicone sleeve</p>
+  <p><strong>Cap:</strong> BPA-free polypropylene</p>
+  <p><strong>Sizes:</strong> 250 mL (~8.5 oz), 500 mL (~17 oz), 1 L (~34 oz)</p>
+  <p>BKR is the fashion-forward glass water bottle that looks beautiful on a desk or nightstand. The thick silicone sleeve comes in dozens of color combinations, and the glass insert is removable for easy cleaning. BKR's cult following has made it a staple in the wellness community. It's not designed for rugged use or hiking, but for everyday hydration in controlled environments, it's arguably the most beautiful and functional glass option.</p>
+  <p><strong>Pros:</strong>
+  <br/>— Gorgeous design with interchangeable silicone sleeves
+  <br/>— Removable glass insert for thorough cleaning
+  <br/>— Non-reactive borosilicate glass
+  <br/>— Fits standard cupholders (500 mL size)</p>
+  <p><strong>Cons:</strong>
+  <br/>— Expensive for the capacity
+  <br/>— Not insulated
+  <br/>— Not suitable for rugged use
+  <br/>— Smaller sizes may not be enough for full-day hydration</p>
+  <p><strong>Best For:</strong> Office, home, yoga — anywhere aesthetics matter and the bottle won't be thrown in a bag.</p>
+  <p><a class="btn" href="https://www.amazon.com/s?k=BKR+glass+water+bottle&tag=hockeytrain0c-20" target="_blank" rel="nofollow sponsored">Check Price on Amazon →</a></p>
+</div>
+
+<hr />
+
+<h2 id="comparison">8. Comparison Table</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Product</th>
+  <th>Material</th>
+  <th>Insulated</th>
+  <th>Cap Material</th>
+  <th>Price</th>
+  <th>Best Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Hydro Flask</strong></td>
+  <td>18/8 steel</td>
+  <td>Yes</td>
+  <td>#5 PP</td>
+  <td>~$35–$45</td>
+  <td>All-purpose</td>
+</tr>
+<tr>
+  <td><strong>YETI Rambler</strong></td>
+  <td>18/8 steel</td>
+  <td>Yes</td>
+  <td>#5 PP (magnetic)</td>
+  <td>~$40–$50</td>
+  <td>Outdoor, jobsite</td>
+</tr>
+<tr>
+  <td><strong>S'well</strong></td>
+  <td>18/8 steel</td>
+  <td>Yes (triple)</td>
+  <td>#5 PP</td>
+  <td>~$25–$45</td>
+  <td>Office, style</td>
+</tr>
+<tr>
+  <td><strong>Klean Kanteen</strong></td>
+  <td>18/8 steel</td>
+  <td>Optional</td>
+  <td>SS (optional)</td>
+  <td>~$20–$35</td>
+  <td>Best value, kids</td>
+</tr>
+<tr>
+  <td><strong>LifeFactory</strong></td>
+  <td>Glass (boro)</td>
+  <td>No</td>
+  <td>#5 PP</td>
+  <td>~$20–$30</td>
+  <td>Desk, home</td>
+</tr>
+<tr>
+  <td><strong>BKR</strong></td>
+  <td>Glass (boro)</td>
+  <td>No</td>
+  <td>#5 PP</td>
+  <td>~$30–$40</td>
+  <td>Office, yoga</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="recommendations">9. Recommendations by Use Case</h2>
+
+<h3>💼 Best Non-Toxic Water Bottle for the Office</h3>
+<p><strong>Pick: Klean Kanteen Classic or LifeFactory Glass</strong></p>
+<p>For a desk setting, a glass bottle like LifeFactory offers the purest taste and won't interact with coffee or tea. If you prefer insulation, S'well wins on aesthetics and keeps your water cold all day. Klean Kanteen with the stainless steel cap is the only fully plastic-free option here.</p>
+
+<h3>🏋️ Best Non-Toxic Water Bottle for the Gym</h3>
+<p><strong>Pick: Hydro Flask Wide Mouth</strong></p>
+<p>You need durability, a wide mouth for chugging, and good grip. Hydro Flask's powder-coat finish provides slip resistance even with sweaty hands, and the wide mouth lets you hydrate fast. Klean Kanteen's TKWide with the sports cap is a close second.</p>
+
+<h3>🥾 Best Non-Toxic Water Bottle for Hiking</h3>
+<p><strong>Pick: YETI Rambler or Hydro Flask Trail Series</strong></p>
+<p>For the trail, weight and durability matter. YETI's brute strength is unmatched, but it's heavy. Hydro Flask's Trail Series features a lighter bottle with a Flex Cap (attached to the loop). Klean Kanteen's insulated wide-mouth is a lighter, more affordable alternative. Avoid glass bottles for hiking — one slip on a rock and you're cleaning up shards.</p>
+
+<h3>👶 Best Non-Toxic Water Bottle for Kids</h3>
+<p><strong>Pick: Klean Kanteen Kid Kanteen with Sport Cap</strong></p>
+<p>Klean Kanteen's Kid Kanteen line starts at 12 oz, is made from the same 18/8 stainless steel as the adult bottles, and features fun colors and designs. The loop cap is 100% stainless steel, making it the safest possible bottle for children. LifeFactory also makes a 9 oz glass bottle with a silicone sleeve that's great for supervised use by older kids. Avoid plastic bottles entirely for children, who are most vulnerable to endocrine-disrupting chemicals.</p>
+
+<div class="callout">
+  <strong>📝 Bottom Line:</strong> If you only buy one bottle, make it <strong>Klean Kanteen</strong>. They offer the best balance of safety, affordability, and plastic-free options. For maximum purity and zero plastic contact, pair a Klean Kanteen with the stainless steel cap — the closest you can get to drinking from a glass in a durable, portable package.
+</div>
+
+<hr />
+
+<h2 id="faq">10. Frequently Asked Questions</h2>
+
+<div class="faq-item">
+  <h4>Are stainless steel water bottles safe?</h4>
+  <p>Yes — high-quality 18/8 (304) or 316 stainless steel is considered one of the safest materials for food and beverage storage. It's non-reactive, doesn't rust, and doesn't leach chemicals into water. Just ensure the interior is unlined (no epoxy or plastic coating).</p>
+</div>
+
+<div class="faq-item">
+  <h4>What is the best non-toxic water bottle?</h4>
+  <p>For most people, <strong>Klean Kanteen</strong> offers the best combination of safety, durability, and value — especially when paired with the stainless steel cap. For those who want insulation, <strong>Hydro Flask</strong> and <strong>YETI</strong> are excellent choices. For zero chemical interaction and pure taste, choose a <strong>borosilicate glass</strong> bottle from LifeFactory or BKR.</p>
+</div>
+
+<div class="faq-item">
+  <h4>Is aluminum safe for water bottles?</h4>
+  <p>Aluminum bottles are typically lined with an epoxy or polymer coating to prevent the metal from reacting with acidic liquids. These linings often contain BPA or other bisphenols. Unless you can verify the lining is BPA/BPS-free (and even then, replacement chemicals may be of concern), we recommend avoiding aluminum bottles in favor of stainless steel or glass.</p>
+</div>
+
+<div class="faq-item">
+  <h4>Can I put hot liquids in a stainless steel bottle?</h4>
+  <p>Yes, but with caution. Insulated stainless steel bottles are designed to keep hot liquids hot. However, narrow-mouth bottles pose a burn risk if the liquid is too hot — the pressure can cause the lid to burst off or hot liquid to erupt. Use a Thermos-style bottle designed for hot contents, or let liquids cool before sealing.</p>
+</div>
+
+<div class="faq-item">
+  <h4>How do I clean a non-toxic water bottle?</h4>
+  <p>Most stainless steel bottles are dishwasher safe (top rack). For hand washing, use warm soapy water with a bottle brush. For stubborn odors or stains, a mixture of baking soda and warm water (or white vinegar) works well. Avoid using bleach or abrasive cleaners that could damage the finish.</p>
+</div>
+
+<div class="faq-item">
+  <h4>How often should I replace my water bottle?</h4>
+  <p>Stainless steel bottles can last a lifetime with proper care. Replace them if you notice dents, rust (rare in quality 18/8 steel), compromised insulation, or damage to the lid seal. Glass bottles should be replaced immediately if chipped or cracked. Plastic bottles should be replaced every few months — though we recommend switching to stainless or glass instead.</p>
+</div>
+
+<div class="faq-item">
+  <h4>Are copper water bottles safe?</h4>
+  <p>Copper has natural antimicrobial properties and some traditions praise copper for health benefits. However, excessive copper intake can cause toxicity. Most modern copper bottles are lined to prevent copper from leaching into water. As with aluminum, the lining is the concern. Unlined copper should be used only for short-term storage (under 6–8 hours) and not with acidic liquids.</p>
+</div>
+
+<hr />
+
+<h2>Final Thoughts</h2>
+
+<p>The <strong>best non-toxic water bottle</strong> in 2026 is one that's made from 18/8 stainless steel or borosilicate glass, has a pure unlined interior, and uses a lid made from stainless steel, silicone, or BPA/BPS-free #5 polypropylene. Plastic bottles — even "BPA-free" ones — carry risks from BPS, BPF, and microplastic shedding that simply aren't worth taking.</p>
+
+<p>Our top pick for most people is the <strong>Klean Kanteen</strong> with a stainless steel cap — it's the most affordable fully non-toxic bottle on the market and versatile enough for office, gym, trail, or kids. If insulation matters, <strong>Hydro Flask</strong> offers the best all-around performance. And if you never leave your desk, <strong>LifeFactory</strong> or <strong>BKR</strong> glass bottles give you the purest tasting water possible.</p>
+
+<p><em>Stay hydrated. Stay safe. Ditch the plastic.</em></p>
+
       </div>
+      <p class="affiliate-note">Temple Keep is an independent review site. As an Amazon Associate I earn from qualifying purchases. All opinions are our own.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Temple Keep</strong> — Evidence-based guides for a cleaner home and longer life</p>
+      <p>&copy; 2026 Temple Keep. As an Amazon Associate I earn from qualifying purchases.</p>
     </div>
-
-    <!-- Section 5: S'well -->
-    <h2 id="swell">5. S'well — Style Meets Performance</h2>
-
-    <div class="product-card">
-      <p><span class="badge">STYLE</span> <span class="badge gym">GYM</span> <span class="badge">OFFICE</span></p>
-      <p><strong>Best for:</strong> Office workers, style-conscious users, and gift-giving.</p>
-
-      <p>S'well bottles are as much a fashion accessory as a hydration tool. Their triple-wall, vacuum-insulated 18/8 stainless steel construction keeps drinks cold for up to 41 hours and hot for up to 18 — best-in-class numbers for this category.</p>
-
-      <p>The interior is pure 18/8 stainless steel with no coating. The exterior comes in dozens of finishes from matte stone to marble to metallic, making it easy to match your aesthetic. The mouth is wide enough for ice cubes but narrow enough for comfortable sipping without a straw.</p>
-
-      <p>S'well has also partnered with UNICEF to provide clean drinking water to children in need — you're doing good just by buying one. One caveat: the narrow mouth makes thorough cleaning more difficult, and the bottle is not fully dishwasher safe (hand wash recommended).</p>
-
-      <div class="pros-cons">
-        <div class="pros">
-          <h4>✅ Pros</h4>
-          <ul>
-            <li>Beautiful design variety</li>
-            <li>Excellent insulation (41 hr cold / 18 hr hot)</li>
-            <li>Pure 18/8 steel interior</li>
-            <li>Triple-wall vacuum insulation</li>
-            <li>Charity partnership (UNICEF)</li>
-          </ul>
-        </div>
-        <div class="cons">
-          <h4>❌ Cons</h4>
-          <ul>
-            <li>Narrow mouth — hard to clean</li>
-            <li>Not dishwasher safe</li>
-            <li>Plastic lid thread ring</li>
-            <li>Expensive ($35–$55)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 6: Klean Kanteen -->
-    <h2 id="klean-kanteen">6. Klean Kanteen — The Pioneer of Non-Toxic Hydration</h2>
-
-    <div class="product-card">
-      <p><span class="badge">BEST VALUE</span> <span class="badge kids">KIDS</span> <span class="badge hiking">HIKING</span></p>
-      <p><strong>Best for:</strong> Budget-conscious buyers, kids, and eco-focused users.</p>
-
-      <p>Klean Kanteen was one of the first brands to call out the dangers of plastic bottles, and they remain the gold standard for non-toxic hydration. Their standard bottles are made from 18/8 stainless steel (made from 90% post-consumer recycled content in many lines), with a completely unlined interior.</p>
-
-      <p>What sets Klean Kanteen apart is the <strong>lids</strong>. They offer the widest selection of cap options, including a 100% stainless steel cap (the Classic), bamboo caps, and BPA/BPS-free PP lids with straws, sports tops, and more. For the truly plastic-free experience, the stainless steel cap is unmatched.</p>
-
-      <p>Klean Kanteen also produces the widest range of kid-focused bottles (from 12 oz), uses Climate Neutral certified manufacturing, and publishes third-party testing results for every product. Their prices are generally lower than Hydro Flask and YETI.</p>
-
-      <div class="pros-cons">
-        <div class="pros">
-          <h4>✅ Pros</h4>
-          <ul>
-            <li>100% stainless steel cap available (no plastic at all)</li>
-            <li>Unlined 18/8 steel interior</li>
-            <li>Recycled materials used</li>
-            <li>Best price-to-performance ratio</li>
-            <li>Wide range of kid-friendly sizes</li>
-            <li>Third-party tested &amp; certified</li>
-          </ul>
-        </div>
-        <div class="cons">
-          <h4>❌ Cons</h4>
-          <ul>
-            <li>Insulation (if needed) only in certain models</li>
-            <li>Powder coat can chip over time</li>
-            <li>Some lids still use plastic</li>
-            <li>Narrow mouth on standard models</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 7: Glass -->
-    <h2 id="glass">7. Best Glass Water Bottles — The Purest Sip</h2>
-
-    <p>For those who want zero metallic taste or potential chemical interaction, glass water bottles offer the cleanest possible hydration. Glass is chemically inert — it won't leach anything into your water even when exposed to heat or acidic contents like lemon water.</p>
-
-    <div class="callout info">
-      <strong>🧪 The Science:</strong> Borosilicate glass (used in labware) has a very low coefficient of thermal expansion, making it resistant to thermal shock. It's also non-porous, so it won't harbor bacteria or retain flavors between uses.
-    </div>
-
-    <h3>Top Glass Bottle Picks</h3>
-
-    <ul>
-      <li><strong>LifeFactory Glass Water Bottle</strong> — Made from pharmaceutical-grade borosilicate glass with a silicone sleeve for drop protection and a polypropylene #5 lid. Available in 9 oz (kids), 16 oz, and 22 oz. 100% free of BPA, BPS, lead, phthalates, and other chemicals.</li>
-      <li><strong>Purifyou Premium Glass Water Bottle</strong> — Medical-grade borosilicate glass with a food-grade silicone sleeve and bamboo or stainless steel lid. Wide mouth fits ice cubes, and the silicone sleeve provides excellent grip. Dishwasher safe (bottle only).</li>
-      <li><strong>Snow Peak Glass Bottle</strong> — Japanese-designed borosilicate glass with a silicone cap and bamboo cover. Minimalist, lightweight, and elegant — but expensive and not insulated.</li>
-      <li><strong>BKR Glass Water Bottle</strong> — Completely borosilicate glass body with a silicone wrap and silicone cap. Extremely popular for office and everyday use. The silicone also acts as a bumper. Not insulated.</li>
-    </ul>
-
-    <div class="callout danger">
-      <strong>⚠️ Consideration:</strong> Glass bottles are breakable. Even with silicone sleeves, they are not suitable for rugged hiking, gym bags, or children's lunchboxes. Reserve glass bottles for desk work, yoga, and home use.
-    </div>
-
-    <!-- Section 8: Comparison Table -->
-    <h2 id="comparison">8. Comparison Table</h2>
-
-    <p>A quick side-by-side look at all the top non-toxic water bottles covered in this guide.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Brand</th>
-          <th>Material</th>
-          <th>Interior</th>
-          <th>Insulated</th>
-          <th>Plastic-Free Lid?</th>
-          <th>Dishwasher Safe</th>
-          <th>Price Range</th>
-          <th>Best For</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Hydro Flask</strong></td>
-          <td>18/8 Stainless Steel</td>
-          <td>Unlined</td>
-          <td>Yes (TempShield)</td>
-          <td>No (PP lid)</td>
-          <td>Yes (top rack)</td>
-          <td>$35–$50</td>
-          <td>All-purpose, hiking, gym</td>
-        </tr>
-        <tr>
-          <td><strong>YETI Rambler</strong></td>
-          <td>18/8 Stainless Steel</td>
-          <td>Unlined</td>
-          <td>Yes (NoraVac)</td>
-          <td>No (MagSlider PP)</td>
-          <td>Yes</td>
-          <td>$40–$60</td>
-          <td>Rugged outdoor, hot drinks</td>
-        </tr>
-        <tr>
-          <td><strong>S'well</strong></td>
-          <td>18/8 Stainless Steel</td>
-          <td>Unlined</td>
-          <td>Yes (Triple-wall)</td>
-          <td>No (PP lid ring)</td>
-          <td>Hand wash only</td>
-          <td>$35–$55</td>
-          <td>Office, style, gifts</td>
-        </tr>
-        <tr>
-          <td><strong>Klean Kanteen</strong></td>
-          <td>18/8 Stainless Steel</td>
-          <td>Unlined</td>
-          <td>Yes (on TKWide models)</td>
-          <td>Yes (Classic SS cap)</td>
-          <td>Yes</td>
-          <td>$25–$40</td>
-          <td>Budget, kids, eco-focused</td>
-        </tr>
-        <tr>
-          <td><strong>LifeFactory</strong></td>
-          <td>Borosilicate Glass</td>
-          <td>N/A (glass)</td>
-          <td>No</td>
-          <td>No (PP #5 lid)</td>
-          <td>Yes (bottle only)</td>
-          <td>$25–$35</td>
-          <td>Home, office, kids (with sleeve)</td>
-        </tr>
-        <tr>
-          <td><strong>BKR</strong></td>
-          <td>Borosilicate Glass</td>
-          <td>N/A (glass)</td>
-          <td>No</td>
-          <td>No (silicone cap)</td>
-          <td>Hand wash only</td>
-          <td>$30–$40</td>
-          <td>Office, yoga, home</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Section 9: Recommendations -->
-    <h2 id="recommendations">9. Recommendations by Use Case</h2>
-
-    <h3>💼 Best Non-Toxic Water Bottle for the Office</h3>
-    <p><strong>Pick: Klean Kanteen S'well or Classic with Stainless Steel Cap</strong></p>
-    <p>For a desk setting, a glass bottle like <strong>LifeFactory</strong> or <strong>BKR</strong> offers the purest taste and won't interact with coffee or tea. If you prefer insulation, <strong>S'well</strong> wins on aesthetics and keeps your water cold all day. Klean Kanteen with the stainless steel cap is the only fully plastic-free option here.</p>
-
-    <h3>🏋️ Best Non-Toxic Water Bottle for the Gym</h3>
-    <p><strong>Pick: Hydro Flask Wide Mouth</strong></p>
-    <p>You need durability, a wide mouth for chugging, and good grip. Hydro Flask's powder-coat finish provides slip resistance even with sweaty hands, and the wide mouth lets you hydrate fast. Klean Kanteen's TKWide with the sports cap is a close second.</p>
-
-    <h3>🥾 Best Non-Toxic Water Bottle for Hiking</h3>
-    <p><strong>Pick: YETI Rambler or Hydro Flask Trail Series</strong></p>
-    <p>For the trail, weight and durability matter. YETI's brute strength is unmatched, but it's heavy. Hydro Flask's Trail Series features a lighter bottle with a Flex Cap (attached to the loop). Klean Kanteen's insulated wide-mouth is a lighter, more affordable alternative. Avoid glass bottles for hiking — one slip on a rock and you're cleaning up shards.</p>
-
-    <h3>👶 Best Non-Toxic Water Bottle for Kids</h3>
-    <p><strong>Pick: Klean Kanteen Kid Kanteen with Sport Cap</strong></p>
-    <p>Klean Kanteen's Kid Kanteen line starts at 12 oz, is made from the same 18/8 stainless steel as the adult bottles, and features fun colors and designs. The loop cap is 100% stainless steel, making it the safest possible bottle for children. LifeFactory also makes a 9 oz glass bottle with a silicone sleeve that's great for supervised use by older kids. Avoid plastic bottles entirely for children, who are most vulnerable to endocrine-disrupting chemicals.</p>
-
-    <div class="callout">
-      <strong>📝 Bottom Line:</strong> If you only buy one bottle, make it <strong>Klean Kanteen</strong>. They offer the best balance of safety, affordability, and plastic-free options. For maximum purity and zero plastic contact, pair a Klean Kanteen with the stainless steel cap — the closest you can get to drinking from a glass in a durable, portable package.
-    </div>
-
-    <!-- Section 10: FAQ -->
-    <h2 id="faq">10. Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <h4>Are stainless steel water bottles safe?</h4>
-      <p>Yes — high-quality 18/8 (304) or 316 stainless steel is considered one of the safest materials for food and beverage storage. It's non-reactive, doesn't rust, and doesn't leach chemicals into water. Just ensure the interior is unlined (no epoxy or plastic coating).</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>What is the best non-toxic water bottle?</h4>
-      <p>For most people, <strong>Klean Kanteen</strong> offers the best combination of safety, durability, and value — especially when paired with the stainless steel cap. For those who want insulation, <strong>Hydro Flask</strong> and <strong>YETI</strong> are excellent choices. For zero chemical interaction and pure taste, choose a <strong>borosilicate glass</strong> bottle from LifeFactory or BKR.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>Is aluminum safe for water bottles?</h4>
-      <p>Aluminum bottles are typically lined with an epoxy or polymer coating to prevent the metal from reacting with acidic liquids. These linings often contain BPA or other bisphenols. Unless you can verify the lining is BPA/BPS-free (and even then, replacement chemicals may be of concern), we recommend avoiding aluminum bottles in favor of stainless steel or glass.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>Can I put hot liquids in a stainless steel bottle?</h4>
-      <p>Yes, but with caution. Insulated stainless steel bottles are designed to keep hot liquids hot. However, narrow-mouth bottles pose a burn risk if the liquid is too hot — the pressure can cause the lid to burst off or hot liquid to erupt. Use a Thermos-style bottle designed for hot contents, or let liquids cool before sealing.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>How do I clean a non-toxic water bottle?</h4>
-      <p>Most stainless steel bottles are dishwasher safe (top rack). For hand washing, use warm soapy water with a bottle brush. For stubborn odors or stains, a mixture of baking soda and warm water (or white vinegar) works well. Avoid using bleach or abrasive cleaners that could damage the finish.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>How often should I replace my water bottle?</h4>
-      <p>Stainless steel bottles can last a lifetime with proper care. Replace them if you notice dents, rust (rare in quality 18/8 steel), compromised insulation, or damage to the lid seal. Glass bottles should be replaced immediately if chipped or cracked. Plastic bottles should be replaced every few months — though we recommend switching to stainless or glass instead.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>Are copper water bottles safe?</h4>
-      <p>Copper has natural antimicrobial properties and some traditions praise copper for health benefits. However, excessive copper intake can cause toxicity. Most modern copper bottles are lined to prevent copper from leaching into water. As with aluminum, the lining is the concern. Unlined copper should be used only for short-term storage (under 6–8 hours) and not with acidic liquids.</p>
-    </div>
-
-    <!-- Conclusion -->
-    <h2>Final Thoughts</h2>
-
-    <p>The <strong>best non-toxic water bottle</strong> in 2026 is one that's made from 18/8 stainless steel or borosilicate glass, has a pure unlined interior, and uses a lid made from stainless steel, silicone, or BPA/BPS-free #5 polypropylene. Plastic bottles — even "BPA-free" ones — carry risks from BPS, BPF, and microplastic shedding that simply aren't worth taking.</p>
-
-    <p>Our top pick for most people is the <strong>Klean Kanteen</strong> with a stainless steel cap — it's the most affordable fully non-toxic bottle on the market and versatile enough for office, gym, trail, or kids. If insulation matters, <strong>Hydro Flask</strong> offers the best all-around performance. And if you never leave your desk, <strong>LifeFactory</strong> or <strong>BKR</strong> glass bottles give you the purest tasting water possible.</p>
-
-    <p><em>Stay hydrated. Stay safe. Ditch the plastic.</em></p>
-
-  
-<h2>Top Non-Toxic Water Bottles</h2>
-<p>Stay hydrated without worrying about harmful chemicals leaching into your water. Here are our top picks from <a href="https://www.amazon.com/s?k=non+toxic+water+bottle&tag=hockeytrain0c-20" target="_blank" rel="nofollow sponsored">Amazon</a>:</p>
-<ul>
-<li><a href="https://www.amazon.com/s?k=Hydro+Flask+water+bottle&tag=hockeytrain0c-20" target="_blank" rel="nofollow sponsored">Hydro Flask Standard Mouth</a> — 18/8 stainless steel, double-wall vacuum insulated, BPA-free lid.</li>
-<li><a href="https://www.amazon.com/s?k=LifeFactory+glass+water+bottle&tag=hockeytrain0c-20" target="_blank" rel="nofollow sponsored">LifeFactory Glass Bottle</a> — Tempered glass with protective silicone sleeve, wide mouth.</li>
-<li><a href="https://www.amazon.com/s?k=Klean+Kanteen+water+bottle&tag=hockeytrain0c-20" target="_blank" rel="nofollow sponsored">Klean Kanteen Classic</a> — 18/8 stainless steel, BPA-free cap, lightweight for everyday carry.</li>
-<li><a href="https://www.amazon.com/s?k=Owala+Freesip+water+bottle&tag=hockeytrain0c-20" target="_blank" rel="nofollow sponsored">Owala FreeSip</a> — Stainless steel with built-in straw, BPA-free, great for on-the-go.</li>
-</ul>
-</article>
-</main>
-
-<footer>
-  <div class="container">
-    <p>© 2026 Temple Keep. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/about">About Us</a></p>
-    <p style="margin-top:8px; font-size:.8rem;">Disclaimer: This article is for informational purposes only and does not constitute medical advice. Always consult a healthcare professional for personalized recommendations. We may earn a commission through affiliate links on this page.</p>
-  </div>
-</footer>
-
+  </footer>
 <script>
 (function(){var b=document.querySelector(".hamburger"),n=document.querySelector("header nav");b&&b.addEventListener("click",function(){b.classList.toggle("active");n.classList.toggle("mobile-open")})})();
 </script>

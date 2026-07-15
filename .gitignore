@@ -1,3 +1,5 @@
-.env
-.DS_Store
-node_modules/
+# Operational files — NOT website content
+seo-monitor.py
+seo-history.json
+GOOGLE_SEARCH_CONSOLE_SETUP.md
+research/

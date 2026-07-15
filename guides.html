@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Guides — Temple Keep</title>
+  <meta name="description" content="Browse every article and guide on Temple Keep. Search by topic, category, or product — find what you need fast.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fafaf9;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+    .site-header {
+      background: #1a2e1a;
+      padding: 1rem 0;
+      border-bottom: 3px solid #d4a853;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f0ead6;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .site-logo span { color: #d4a853; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a {
+      color: #c8d6c8;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #f0ead6; }
+    .page-hero {
+      background: linear-gradient(135deg, #1a2e1a 0%, #2d4a2d 100%);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #f0ead6;
+      margin-bottom: 0.75rem;
+    }
+    .page-hero p {
+      font-size: 1.1rem;
+      color: #a8c8a8;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .search-wrap {
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .search-wrap input {
+      width: 100%;
+      padding: 0.875rem 1.25rem;
+      border: 2px solid #3d5e3d;
+      border-radius: 12px;
+      background: #f0f5f0;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #1a1a1a;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-wrap input:focus {
+      border-color: #d4a853;
+      background: #fff;
+    }
+    .search-wrap input::placeholder { color: #888; }
+    .search-count {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: #8aad8a;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+    .category-section { margin-bottom: 2.5rem; }
+    .category-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e5e5e5;
+    }
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a2e1a;
+    }
+    .category-count {
+      font-size: 0.875rem;
+      color: #888;
+      font-weight: 500;
+    }
+    .article-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .article-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .article-item:hover {
+      border-color: #d4a853;
+      box-shadow: 0 2px 8px rgba(212,168,83,0.12);
+      transform: translateX(4px);
+    }
+    .article-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #1a1a1a;
+      flex: 1;
+    }
+    .article-meta {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-left: 1rem;
+      white-space: nowrap;
+    }
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 3rem;
+      color: #888;
+      font-size: 1.1rem;
+    }
+    .no-results.visible { display: block; }
+    .hidden { display: none !important; }
+    .back-home {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #1a2e1a;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .back-home:hover { text-decoration: underline; }
+    .icon { margin-right: 0.35rem; }
+    @media (max-width: 640px) {
+      .page-hero h1 { font-size: 1.75rem; }
+      .header-inner { flex-direction: column; gap: 0.75rem; }
+      .article-item { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+      .article-meta { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo">temple<span>keep</span></a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/blog/water-filters/">Water</a>
+      <a href="/blog/air-purifiers/">Air</a>
+      <a href="/blog/cookware/">Cookware</a>
+      <a href="/blog/sleep/">Sleep</a>
+      <a href="/blog/cleaning/">Cleaning</a>
+      <a href="/blog/supplements/">Supplements</a>
+      <a href="/about.html">About</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <h1>All Guides &amp; Reviews</h1>
+  <p>Search every article on Temple Keep — find the right product, compare options, and make healthier choices for your home.</p>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search articles…" autofocus>
+    <div class="search-count"><span id="resultCount">33</span> articles</div>
+  </div>
+</section>
+
+<div class="container" id="tocContainer">
+
+  <!-- Water -->
+  <section class="category-section" data-category="water">
+    <div class="category-header">
+      <h2 class="category-title">💧 Water Filters</h2>
+      <span class="category-count">11 articles</span>
+    </div>
+    <div class="article-list">
+      <a href="/blog/water-filters/best-water-filters-2026.html" class="article-item" data-search="best water filters 2026 complete buying guide">
+        <span class="article-title">Best Water Filters for 2026 — Complete Buying Guide</span>
+        <span class="article-meta">7 products</span>
+      </a>
+      <a href="/blog/water-filters/best-countertop-reverse-osmosis.html" class="article-item" data-search="best countertop reverse osmosis systems">
+        <span class="article-title">Best Countertop Reverse Osmosis Systems</span>
+        <span class="article-meta">4 systems</span>
+      </a>
+      <a href="/blog/water-filters/best-under-sink-water-filter.html" class="article-item" data-search="best under sink water filter">
+        <span class="article-title">Best Under-Sink Water Filters</span>
+        <span class="article-meta">Guide</span>
+      </a>
+      <a href="/blog/water-filters/pfas-water-filters.html" class="article-item" data-search="pfas in drinking water what filters actually work">
+        <span class="article-title">PFAS in Drinking Water — What Filters Actually Work</span>
+        <span class="article-meta">8 min read</span>
+      </a>
+      <a href="/blog/water-filters/are-water-filters-worth-it.html" class="article-item" data-search="are water filters worth it what research says">
+        <span class="article-title">Are Water Filters Worth It? What the Research Says</span>
+        <span class="article-meta">Deep dive</span>
+      </a>
+      <a href="/blog/water-filters/reverse-osmosis-vs-carbon-filter.html" class="article-item" data-search="reverse osmosis vs carbon filter which is better">
+        <span class="article-title">Reverse Osmosis vs Carbon Filter: Which Is Better?</span>
+        <span class="article-meta">Comparison</span>
+      </a>
+      <a href="/blog/water-filters/is-reverse-osmosis-water-bad.html" class="article-item" data-search="is reverse osmosis water bad for you">
+        <span class="article-title">Is Reverse Osmosis Water Bad for You?</span>
+        <span class="article-meta">Analysis</span>
+      </a>
+      <a href="/blog/water-filters/brita-vs-pur-pitcher-comparison.html" class="article-item" data-search="brita vs pur pitcher comparison">
+        <span class="article-title">Brita vs PUR Pitcher Comparison</span>
+        <span class="article-meta">Comparison</span>
+      </a>
+      <a href="/blog/water-filters/waterdrop-d4-review.html" class="article-item" data-search="waterdrop d4 review">
+        <span class="article-title">Waterdrop D4 Review</span>
+        <span class="article-meta">Review</span>
+      </a>
+      <a href="/blog/water-filters/ispring-rcc7-review.html" class="article-item" data-search="ispring rcc7 review">
+        <span class="article-title">iSpring RCC7 Review</span>
+        <span class="article-meta">Review</span>
+      </a>
+      <a href="/blog/water-filters/aquasana-claryum-review.html" class="article-item" data-search="aquasana claryum review">
+        <span class="article-title">Aquasana Claryum Review</span>
+        <span class="article-meta">Review</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Air -->
+  <section class="category-section" data-category="air">
+    <div class="category-header">
+      <h2 class="category-title">🌬️ Air Purifiers</h2>
+      <span class="category-count">11 articles</span>
+    </div>
+    <div class="article-list">
+      <a href="/blog/air-purifiers/best-air-purifiers-allergies-2026.html" class="article-item" data-search="best air purifiers for allergies 2026 buyers guide">
+        <span class="article-title">Best Air Purifiers for Allergies — 2026 Buyer's Guide</span>
+        <span class="article-meta">7 products</span>
+      </a>
+      <a href="/blog/air-purifiers/best-air-purifier-wildfire-smoke.html" class="article-item" data-search="best air purifier for wildfire smoke">
+        <span class="article-title">Best Air Purifiers for Wildfire Smoke</span>
+        <span class="article-meta">Guide</span>
+      </a>
+      <a href="/blog/air-purifiers/best-air-purifiers-pet-dander.html" class="article-item" data-search="best air purifiers for pet dander">
+        <span class="article-title">Best Air Purifiers for Pet Dander</span>
+        <span class="article-meta">Guide</span>
+      </a>
+      <a href="/blog/air-purifiers/best-air-purifiers-mold-spores.html" class="article-item" data-search="best air purifiers for mold spores">
+        <span class="article-title">Best Air Purifiers for Mold Spores</span>
+        <span class="article-meta">Guide</span>
+      </a>
+      <a href="/blog/air-purifiers/best-hepa-air-purifiers-under-500.html" class="article-item" data-search="best hepa air purifiers under 500">
+        <span class="article-title">Best HEPA Air Purifiers Under $500</span>
+        <span class="article-meta">5 products</span>
+      </a>
+      <a href="/blog/air-purifiers/budget-air-purifiers-under-200.html" class="article-item" data-search="best budget air purifiers under 200">
+        <span class="article-title">5 Best Budget Air Purifiers Under $200</span>
+        <span class="article-meta">5 products</span>
+      </a>
+      <a href="/blog/air-purifiers/best-air-quality-monitors.html" class="article-item" data-search="best indoor air quality monitors complete guide">
+        <span class="article-title">Best Indoor Air Quality Monitors — Complete Guide 2026</span>
+        <span class="article-meta">5 monitors</span>
+      </a>
+      <a href="/blog/air-purifiers/how-to-choose-air-purifier.html" class="article-item" data-search="how to choose an air purifier">
+        <span class="article-title">How to Choose an Air Purifier</span>
+        <span class="article-meta">Guide</span>
+      </a>
+      <a href="/blog/air-purifiers/levoit-core-300-review.html" class="article-item" data-search="levoit core 300 review best budget air purifier">
+        <span class="article-title">Levoit Core 300 Review: Best Budget Air Purifier?</span>
+        <span class="article-meta">5 min read</span>
+      </a>
+      <a href="/blog/air-purifiers/winix-5500-2-review.html" class="article-item" data-search="winix 5500 2 review">
+        <span class="article-title">Winix 5500-2 Review</span>
+        <span class="article-meta">Review</span>
+      </a>
+      <a href="/blog/air-purifiers/coway-airmega-400s-vs-blueair-311i-plus.html" class="article-item" data-search="coway airmega 400s vs blueair 311i plus">
+        <span class="article-title">Coway Airmega 400S vs Blueair 311i+</span>
+        <span class="article-meta">Comparison</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Cookware -->
+  <section class="category-section" data-category="cookware">
+    <div class="category-header">
+      <h2 class="category-title">🍳 Cookware</h2>
+      <span class="category-count">4 articles</span>
+    </div>
+    <div class="article-list">
+      <a href="/blog/cookware/best-non-toxic-cookware-2026.html" class="article-item" data-search="best non toxic cookware sets 2026 complete buying guide">
+        <span class="article-title">Best Non-Toxic Cookware Sets for 2026 — Complete Buying Guide</span>
+        <span class="article-meta">7 products</span>
+      </a>
+      <a href="/blog/cookware/best-non-toxic-pans-2026.html" class="article-item" data-search="best non toxic pans 2026">
+        <span class="article-title">Best Non-Toxic Pans for 2026</span>
+        <span class="article-meta">Guide</span>
+      </a>
+      <a href="/blog/cookware/ceramic-vs-stainless-steel-cookware.html" class="article-item" data-search="ceramic vs stainless steel cookware which is safer">
+        <span class="article-title">Ceramic vs Stainless Steel Cookware: Which Is Safer?</span>
+        <span class="article-meta">7 min read</span>
+      </a>
+      <a href="/blog/cookware/best-non-toxic-water-bottles.html" class="article-item" data-search="best non toxic water bottles">
+        <span class="article-title">Best Non-Toxic Water Bottles</span>
+        <span class="article-meta">Guide</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Cleaning -->
+  <section class="category-section" data-category="cleaning">
+    <div class="category-header">
+      <h2 class="category-title">🧹 Cleaning</h2>
+      <span class="category-count">4 articles</span>
+    </div>
+    <div class="article-list">
+      <a href="/blog/cleaning/best-non-toxic-cleaning-products-2026.html" class="article-item" data-search="best non toxic cleaning products complete guide">
+        <span class="article-title">Best Non-Toxic Cleaning Products: Complete Guide for 2026</span>
+        <span class="article-meta">7 products</span>
+      </a>
+      <a href="/blog/cleaning/best-non-toxic-laundry-detergent-2026.html" class="article-item" data-search="best non toxic laundry detergent">
+        <span class="article-title">Best Non-Toxic Laundry Detergent for 2026</span>
+        <span class="article-meta">Guide</span>
+      </a>
+      <a href="/blog/cleaning/best-non-toxic-dish-soap-2026.html" class="article-item" data-search="best non toxic dish soap">
+        <span class="article-title">Best Non-Toxic Dish Soap for 2026</span>
+        <span class="article-meta">Guide</span>
+      </a>
+      <a href="/blog/cleaning/branch-basics-review.html" class="article-item" data-search="branch basics review">
+        <span class="article-title">Branch Basics Review</span>
+        <span class="article-meta">Review</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Sleep -->
+  <section class="category-section" data-category="sleep">
+    <div class="category-header">
+      <h2 class="category-title">😴 Sleep &amp; Bedding</h2>
+      <span class="category-count">3 articles</span>
+    </div>
+    <div class="article-list">
+      <a href="/blog/sleep/best-organic-mattresses-2026.html" class="article-item" data-search="best organic mattresses 2026 complete buyers guide">
+        <span class="article-title">Best Organic Mattresses for 2026 — Complete Buyer's Guide</span>
+        <span class="article-meta">6 products</span>
+      </a>
+      <a href="/blog/sleep/best-non-toxic-pillows-2026.html" class="article-item" data-search="best non toxic pillows">
+        <span class="article-title">Best Non-Toxic Pillows for 2026</span>
+        <span class="article-meta">Guide</span>
+      </a>
+      <a href="/blog/sleep/best-non-toxic-bed-sheets-2026.html" class="article-item" data-search="best non toxic bed sheets">
+        <span class="article-title">Best Non-Toxic Bed Sheets for 2026</span>
+        <span class="article-meta">Guide</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Supplements -->
+  <section class="category-section" data-category="supplements">
+    <div class="category-header">
+      <h2 class="category-title">💊 Supplements</h2>
+      <span class="category-count">4 articles</span>
+    </div>
+    <div class="article-list">
+      <a href="/blog/supplements/best-supplements-for-longevity.html" class="article-item" data-search="best supplements for longevity what actually works">
+        <span class="article-title">Best Supplements for Longevity: What Actually Works</span>
+        <span class="article-meta">7 supplements</span>
+      </a>
+      <a href="/blog/supplements/best-omega-3-supplements-2026.html" class="article-item" data-search="best omega 3 supplements">
+        <span class="article-title">Best Omega-3 Supplements for 2026</span>
+        <span class="article-meta">Guide</span>
+      </a>
+      <a href="/blog/supplements/vitamin-d-guide.html" class="article-item" data-search="vitamin d guide benefits dosage">
+        <span class="article-title">Vitamin D Guide: Benefits, Dosage, and Best Sources</span>
+        <span class="article-meta">Guide</span>
+      </a>
+      <a href="/blog/supplements/best-magnesium-supplement.html" class="article-item" data-search="best magnesium supplement">
+        <span class="article-title">Best Magnesium Supplement: Types, Benefits, and Top Picks</span>
+        <span class="article-meta">Guide</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Cornerstone -->
+  <section class="category-section" data-category="guides">
+    <div class="category-header">
+      <h2 class="category-title">📖 Cornerstone Guides</h2>
+      <span class="category-count">1 article</span>
+    </div>
+    <div class="article-list">
+      <a href="/blog/non-toxic-home-priority-roadmap.html" class="article-item" data-search="non toxic home priority roadmap where to start">
+        <span class="article-title">Non-Toxic Home Priority Roadmap: Where to Start</span>
+        <span class="article-meta">12 min read</span>
+      </a>
+    </div>
+  </section>
+
+  <div id="noResults" class="no-results">
+    <p>No articles match your search.</p>
+    <p style="font-size:0.9rem;margin-top:0.5rem;color:#aaa;">Try a different term like "water filter" or "mattress"</p>
+  </div>
+
+  <a href="/" class="back-home">← Back to Home</a>
+</div>
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const categories = document.querySelectorAll('.category-section');
+  const noResults = document.getElementById('noResults');
+  const resultCount = document.getElementById('resultCount');
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    let totalVisible = 0;
+
+    categories.forEach(cat => {
+      const items = cat.querySelectorAll('.article-item');
+      let catHasVisible = false;
+
+      items.forEach(item => {
+        const searchText = item.getAttribute('data-search') + ' ' + item.querySelector('.article-title').textContent.toLowerCase();
+        const match = !query || searchText.includes(query);
+        item.style.display = match ? '' : 'none';
+        if (match) catHasVisible = true;
+      });
+
+      // Show category header only if it has visible items and search is empty or matches
+      const header = cat.querySelector('.category-header');
+      const list = cat.querySelector('.article-list');
+      const showCategory = catHasVisible;
+      cat.style.display = showCategory ? '' : 'none';
+      if (showCategory) {
+        totalVisible += cat.querySelectorAll('.article-item[style*="display: none"]').length;
+        totalVisible += cat.querySelectorAll('.article-item:not([style*="display: none"])').length;
+      }
+      // Recalculate
+      const visibleItems = cat.querySelectorAll('.article-item:not([style*="display: none"])');
+      if (visibleItems.length > 0) {
+        totalVisible += visibleItems.length;
+        cat.style.display = '';
+      } else {
+        cat.style.display = query ? 'none' : '';
+      }
+    });
+
+    // Final count
+    let count = 0;
+    categories.forEach(cat => {
+      if (cat.style.display !== 'none') {
+        count += cat.querySelectorAll('.article-item:not([style*="display: none"])').length;
+      }
+    });
+
+    resultCount.textContent = count;
+    noResults.classList.toggle('visible', count === 0 && query !== '');
+  });
+</script>
+
+</body>
+</html>
