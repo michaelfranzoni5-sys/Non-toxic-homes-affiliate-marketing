@@ -1,4 +1,5 @@
 # Operational files — NOT website content
+.env
 seo-monitor.py
 seo-history.json
 GOOGLE_SEARCH_CONSOLE_SETUP.md

@@ -31,12 +31,44 @@
 </script>
 </head>
 <body>
-<header><div class="container">
-<a href="/" class="logo">temple<span>keep</span></a>
-<nav><a href="/">Home</a><a href="/blog/water-filters/">Water</a><a href="/blog/air-purifiers/">Air</a><a href="/blog/cookware/">Cookware</a><a href="/blog/sleep/">Sleep</a><a href="/blog/cleaning/">Cleaning</a><a href="/blog/supplements/">Supplements</a></nav>
+  <header>
+    <div class="header-top">
+      <div class="header-top-left">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" placeholder="Search Temple Keep..." onkeydown="if(event.key==='Enter'){var q=this.value.trim();if(q)window.location='https://www.google.com/search?q=site:templekeep.com+'+encodeURIComponent(q)}">
+      </div>
+      <a href="/" class="header-logo">temple<span>keep</span></a>
+      <div class="header-utils">
+        <a href="/about.html">About</a>
+      </div>
       <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-</div></header>
-<main class="container">
+    </div>
+    <div class="header-bottom">
+      <nav class="header-nav">
+        <a href="/">Home</a>
+        <a href="/guides.html">All Guides</a>
+        <a href="/blog/water-filters/">Water</a>
+        <a href="/blog/air-purifiers/">Air</a>
+        <a href="/blog/cookware/">Cookware</a>
+        <a href="/blog/sleep/">Sleep</a>
+        <a href="/blog/cleaning/">Cleaning</a>
+        <a href="/blog/supplements/">Supplements</a>
+      </nav>
+    </div>
+    <div class="header-nav-mobile">
+      <a href="/">Home</a>
+      <a href="/guides.html">All Guides</a>
+      <a href="/blog/water-filters/">Water</a>
+      <a href="/blog/air-purifiers/">Air</a>
+      <a href="/blog/cookware/">Cookware</a>
+      <a href="/blog/sleep/">Sleep</a>
+      <a href="/blog/cleaning/">Cleaning</a>
+      <a href="/blog/supplements/">Supplements</a>
+      <a href="/about.html">About</a>
+    </div>
+  </header>
+
+  <main class="container">
 <div class="category-header"><h1>Water Filters</h1><p>Independent reviews and buying guides for water filtration — from $30 pitchers to whole-house systems</p></div>
 <div class="posts-grid">
 <div class="post-card"><span class="cat-badge">Water Filters</span>
@@ -102,6 +134,9 @@
 <p>&copy; 2026 Temple Keep. As an Amazon Associate I earn from qualifying purchases.</p>
 </div></footer>
 <script>
-(function(){var b=document.querySelector(".hamburger"),n=document.querySelector("header nav");b&&b.addEventListener("click",function(){b.classList.toggle("active");n.classList.toggle("mobile-open")})})();
+
+</script>
+<script>
+(function(){var b=document.querySelector(".hamburger"),n=document.querySelector(".header-nav-mobile");b&&b.addEventListener("click",function(){b.classList.toggle("active");n.classList.toggle("mobile-open")})})();
 </script>
 </body></html>
